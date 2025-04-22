@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/assets/logo-CepeOvn1.jpg">
+    <link rel="apple-touch-icon" sizes="64x64" href="/assets/logo-CepeOvn1.jpg">
+
+    <title>Art Gallery</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
+        /* Loading Screen */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1f1f1f; /* Match your existing background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.5s ease;
+        }
+
+        #loading-screen.hidden {
+            opacity: 0;
+        }
+
+        #loading-gif {
+            width: 200px; /* Adjust size as needed */
+            height: 200px;
+        }
+    </style>
+    
+  <link rel="stylesheet" crossorigin href="/assets/index-DYZ6ERsN.css">
+</head>
+<body>
+    <div id="loading-screen">
+        <img id="loading-gif" src="/assets/loading-C3vdDiP3.gif" alt="Loading..." />
+    </div>
+    <canvas>
+    </canvas>
+    <script>
+        // Defer script loading until after window.onload
+        window.onload = () => {
+            console.log('Page loaded, browser spinner should stop');
+            setTimeout(() => {
+                const script = document.createElement('script');
+                script.type = 'module';
+                script.src = '/scr/main.js';
+                document.body.appendChild(script);
+            }, 100); // Small delay to ensure spinner stops
+        };
+    </script>
+    <!-- <script type="module" src="/scr/main.js"></script> -->
+</body>
+</html>
